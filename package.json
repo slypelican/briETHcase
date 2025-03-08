@@ -1,0 +1,25 @@
+{
+  "name": "briethcase",
+  "version": "0.1.0",
+  "description": "briETHcase: an Ethereum monitoring tool.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slypelican/briETHcase.git"
+  },
+  "keywords": [
+    "ethereum"
+  ],
+  "author": "Sly Pelican",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/slypelican/briETHcase/issues"
+  },
+  "homepage": "https://github.com/slypelican/briETHcase#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
