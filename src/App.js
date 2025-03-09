@@ -1,45 +1,3 @@
-const TX_DATA = [
-    {
-        "txid": "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
-        "addresses": {
-            "input": "0x1234567890abcdef1234567890abcdef12345678",
-            "output": "0x0987654321fedcba0987654321fedcba09876543"
-        },
-        "value": 1000,
-        "datetime": "2023-10-01T12:00:00Z",
-    },
-    {
-        "txid": "0xabcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890",
-        "addresses": {
-            "input": "0x1234567890abcdef1234567890abcdef12345678",
-            "output": "0xabcdef1234567890abcdef1234567890abcdef12",
-        },
-        "value": 2000,
-        "datetime": "2023-10-02T12:00:00Z",
-    }
-]
-
-const AD_DATA = [
-    {
-        "address": "0x1234567890abcdef1234567890abcdef12345678",
-        "new_in": false,
-        "new_out": true,
-        "group": "Binance",
-    },
-    {
-        "address": "0x0987654321fedcba0987654321fedcba09876543",
-        "new_in": true,
-        "new_out": false,
-        "group": "Binance",
-    },
-    {
-        "address": "0xabcdef1234567890abcdef1234567890abcdef12",
-        "new_in": true,
-        "new_out": false,
-        "group": "Coinbase",
-    }
-]
-
 const GROUP_DATA = [
     {
         "name": "Binance",
@@ -80,11 +38,9 @@ function WatchBoard({ groups }) {
         )
     })
     return (
-        <table>
-            <tbody>
-                {rows}
-            </tbody>
-        </table>
+        <div class="WatchBoard">
+            {rows}
+        </div>
     )
 }
 
@@ -96,21 +52,19 @@ function BoardGroup({ group }) {
         )
     })
   return (
-    <tr>
-        <th>
-            {group.name}
-        </th>
+    <div class="BoardGroup">
+        <h2>{group.name}</h2>
         {cards}
-    </tr>
+    </div>
   );
 }
 
 function Card({ address, new_in, new_out }) {
   return (
-    <td>
-        <td>{address}</td>
-        <td>{new_in ? "✔️" : "❌"}</td>
-        <td>{new_out ? "✔️" : "❌"}</td>
-    </td>
+    <div class="Card">
+        <h3>{address}</h3>
+        <p>New in: {new_in ? "✔️" : "❌"}</p>
+        <p>New out: {new_out ? "✔️" : "❌"}</p>
+    </div>
   );
 }
