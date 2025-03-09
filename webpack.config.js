@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const { options } = require('yargs');
 module.exports = {
     mode: "development",
     entry: path.resolve(__dirname, 'src/index.js'),
@@ -20,6 +21,9 @@ module.exports = {
             exclude: /node_modules/,
             use: {
                 loader: 'babel-loader',
+                options: {
+                    presets: [['@babel/preset-react', { runtime: 'automatic' }]],
+                },
             },
         },
         {
