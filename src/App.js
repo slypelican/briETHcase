@@ -1,4 +1,4 @@
-import Card from './Card.js'
+import BoardGroup from './Group.js'
 // Data set FOR TESTING ONLY
 import {GROUP_DATA} from './test_data.js'
 
@@ -19,19 +19,3 @@ function WatchBoard({ groups }) {
         </div>
     )
 }
-
-function BoardGroup({ group }) {
-    let cards = []
-    group.cards.forEach((card) => {
-        cards.push(
-            <Card key={card.address} address={card.address} new_in={card.new_in} new_out={card.new_out} />
-        )
-    })
-  return (
-    <div class="BoardGroup">
-        <h2>{group.name}</h2>
-        {cards}
-    </div>
-  );
-}
-
