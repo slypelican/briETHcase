@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const { options } = require('yargs');
+//const { options } = require('yargs');
 module.exports = {
     mode: "development",
     entry: path.resolve(__dirname, 'src/index.js'),
@@ -44,11 +44,11 @@ module.exports = {
             template: 'src/index.html',
         }),
       ],
-    devServer: {
+    /*devServer: {
         devMiddleware: {
             index: true,
             serverSideRender: true,
             writeToDisk: true,
         },
-    }
+    }*/
 };
