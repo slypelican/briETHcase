@@ -1,3 +1,4 @@
+import Card from './Card.js'
 // Data set FOR TESTING ONLY
 import {GROUP_DATA} from './test_data.js'
 
@@ -34,12 +35,3 @@ function BoardGroup({ group }) {
   );
 }
 
-function Card({ address, new_in, new_out }) {
-  return (
-    <div class="Card">
-        <h3>{address}</h3>
-        <p>New in: {new_in ? "✔️" : "❌"}</p>
-        <p>New out: {new_out ? "✔️" : "❌"}</p>
-    </div>
-  );
-}
